@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!---=================================================================================================================================================================-->
+	<!-- load tool model -->
+	<!-- <param name="robot_description" command="$(find xacro)/xacro '$(find ros_robot_pkg)/xacros/blade_sorting_inspection_project.urdf.xacro'" /> -->
+	
+	<param name="robot_description" command="$(find xacro)/xacro '$(find ros_robot_pkg)/xacros/riveting_end_effector.urdf.xacro'" />
+    <node name="robot_state_publisher_ee" pkg="robot_state_publisher" type="robot_state_publisher" />
+	
+	<param name="workpiece" command="$(find xacro)/xacro '$(find ros_robot_pkg)/xacros/riveting_workpiece.urdf.xacro'" /> 
+    <node name="robot_state_publisher_wp" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=workpiece" /> 
+
+
+	<node name = "rviz"  pkg = "rviz" type = "rviz" args="-d $(find ros_robot_pkg)/rviz/riveting.rviz"/>
+	<!-- <node pkg="tf" type="static_transform_publisher" name="TCP_broadcaster" args="1 0 1 0 0 0 ur_base TCP 100" /> -->
+	<node pkg="tf" type="static_transform_publisher" name="wp_to_ur_base_broadcaster" args="-0.19 -0.80 0 0 0 0 ur_base Fixture 100" />
+
+	<!---=================================================================================================================================================================-->
+	<!-- Robot Node -->
+    <node pkg="ros_robot_pkg" type="ros_robot.py" name="ros_robot"  output="screen"/>
+	<!--node pkg="ros_robot_pkg" type="riveting_endeffector.py" name="ros_robot"  output="screen"-->
+    <!-- <node pkg="ros_robot_pkg" type="riveting_endeffector.py" name="ros_robot"  output="screen"/> -->
+	<!--node pkg="ros_robot_pkg" type="move_robot_tutorial.py" name="ros_robot"  output="screen"-->
+    <!-- </node> -->
+
+</launch>

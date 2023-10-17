@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot name="riveting_endeffector" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="camera_link"/>
+    <link name="pressure_ft"/>
+    <link name="davis"/>
+    <!-- <link name="davis2"/> -->
+    <link name="tool"/>
+    <link name="TCP"/>
+    <!-- <link name="ur_base"/> -->
+
+    <joint name="davis_to_camera" type="fixed">
+        <parent link="davis"/>
+        <child link="camera_link"/>
+	    <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- <joint name="ur_base_to_TCP" type="fixed">
+        <parent link="ur_base"/>
+        <child link="TCP"/>
+	    <origin xyz="1 0 1" rpy="0 0 0"/>
+    </joint> -->
+
+    <joint name="TCP_to_tool" type="fixed">
+        <parent link="TCP"/>
+        <child link="tool"/>
+	    <origin xyz="0.05 0 0.15" rpy="0 0 -1.5707963"/>
+    </joint>
+
+    <!-- <joint name="TCP_to_davis" type="fixed">
+        <parent link="TCP"/>
+        <child link="davis"/>
+	    <origin xyz="-0.14088146 0.10864803 0.07998699" rpy="3.13000238 -0.01290779 2.33399465"/>
+    </joint> -->
+    
+    <joint name="TCP_to_davis" type="fixed">
+        <parent link="TCP"/>
+        <child link="davis"/>
+	    <origin xyz="-0.14088146 0.10864803 0.07998699" rpy="3.13000238 -0.01290779 -3.14159"/>
+    </joint>
+    
+    <joint name="TCP_to_pressure_ft" type="fixed">
+        <parent link="TCP"/>
+        <child link="pressure_ft"/>
+	    <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+    
+    </robot>
+    
+

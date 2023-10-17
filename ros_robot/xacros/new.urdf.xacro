@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="macroed" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <link name="Fixture">
+    <!-- <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+    </visual>
+    <inertial>
+      <mass value="10" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial> -->
+  </link>
+
+  <link name="Workpiece" />
+  <joint name="Fixture_to_Workpiece" type="fixed">
+    <parent link="Fixture" />
+    <child link="Workpiece" />
+    <origin rpy="0.00000 0.00000 0.000" xyz="0.000 0.0000 0.00000" />
+  </joint>
+
+  <!-- <link name="Workpiece-center" />
+  <joint name="Workpiece_to-Workpiece-center" type="fixed">
+    <parent link="Workpiece" />
+    <child link="Workpiece-center" />
+    <origin rpy="-1.8849 0.00000 -1.57080" xyz="0.000 0.0000 1.36" />
+  </joint> -->
+
+  <link name="aruco" />
+  <joint name="Workpiece_to_aruco" type="fixed">
+    <parent link="Workpiece" />
+    <child link="aruco" />
+    <origin rpy="0.785398163 0 -3.14159" xyz="0.0 0.0 -0.1" />
+  </joint>
+
+  <link name="Hole-1000" />
+  <joint name="aruco_to_Hole-1000" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1000" />
+    <origin rpy="3.14159 0 0" xyz="-0.11 -0.022 -0.003" />
+  </joint>
+
+  <link name="Hole-1001" />
+  <joint name="aruco_to_Hole-1001" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1001" />
+    <origin rpy="3.14159 0 0" xyz="-0.147 -0.022 -0.003" />
+  </joint>
+
+  <link name="Hole-1002" />
+  <joint name="aruco_to_Hole-1002" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1002" />
+    <origin rpy="3.14159 0 0" xyz="-0.184 -0.022 -0.003" />
+  </joint>
+
+  <link name="Hole-1003" />
+  <joint name="aruco_to_Hole-1003" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1003" />
+    <origin rpy="3.14159 0 0" xyz="-0.221 -0.022 -0.003" />
+  </joint>
+
+  <link name="Hole-1004" />
+  <joint name="aruco_to_Hole-1004" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1004" />
+    <origin rpy="3.14159 0 0" xyz="-0.258 -0.022 -0.003" />
+  </joint>
+
+  <link name="Hole-1005" />
+  <joint name="aruco_to_Hole-1005" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1005" />
+    <origin rpy="3.14159 0 0" xyz="-0.295 -0.022 -0.003" />
+  </joint>
+
+  <link name="Hole-1006" />
+  <joint name="aruco_to_Hole-1006" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1006" />
+    <origin rpy="3.14159 0 0" xyz="-0.332 -0.022 -0.003" />
+  </joint>
+
+  <link name="Hole-1007" />
+  <joint name="aruco_to_Hole-1007" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1007" />
+    <origin rpy="3.14159 0 0" xyz="-0.369 -0.022 -0.003" />
+  </joint>
+
+  <link name="Hole-1008" />
+  <joint name="aruco_to_Hole-1008" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1008" />
+    <origin rpy="3.14159 0 0" xyz="-0.4425 -0.022 -0.003" />
+  </joint>
+  
+  <link name="Hole-1009" />
+  <joint name="aruco_to_Hole-1009" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1009" />
+    <origin rpy="3.14159 0 0" xyz="-0.4795 -0.022 -0.003" />
+  </joint>
+  
+  <link name="Hole-1010" />
+  <joint name="aruco_to_Hole-1010" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1010" />
+    <origin rpy="3.14159 0 0" xyz="-0.5165 -0.022 -0.003" />
+  </joint>
+  
+  <link name="Hole-1011" />
+  <joint name="aruco_to_Hole-1011" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1011" />
+    <origin rpy="3.14159 0 0" xyz="-0.5535 -0.022 -0.003" />
+  </joint>
+  
+  <link name="Hole-1012" />
+  <joint name="aruco_to_Hole-1012" type="fixed">
+    <parent link="aruco" />
+    <child link="Hole-1012" />
+    <origin rpy="3.14159 0 0" xyz="-0.5905 -0.022 -0.003" />
+  </joint>
+  
+</robot>
